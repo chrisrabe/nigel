@@ -14,9 +14,9 @@ const getCatImage = () => {
         http.onreadystatechange = function() {
             //success
             if(http.readyState === 4 && http.status === 200){
-                resolve(http.responseText);
+                resolve(JSON.parse(http.responseText)[0]);
             }
-        }
+        };
 
         http.send();
     }) 
