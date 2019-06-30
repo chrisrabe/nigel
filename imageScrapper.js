@@ -22,3 +22,7 @@ const getCatImage = () => {
     }) 
 
 };
+
+getCatImage().then(res => {
+    console.log(res);
+});;
