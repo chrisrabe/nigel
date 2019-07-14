@@ -1,0 +1,22 @@
+.img-bounds {
+    max-width: 500px;
+    max-height: 500px;
+}
+
+.cat-panel {
+    height: 600px
+}
+
+.bg-pink {
+    background-color: #e7dfdd;
+}
+
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    text-align: center;
+}

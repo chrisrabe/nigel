@@ -38,6 +38,9 @@ displayCatImage();
 
 // Add action listener to button
 document.querySelector('#cat-btn').addEventListener('click', () => {
-    displayCatImage();
+    setCatImage("main.gif");
+    setTimeout(() => {
+        displayCatImage();
+    }, 1000)
 });
 
