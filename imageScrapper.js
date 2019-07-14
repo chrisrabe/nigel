@@ -1,7 +1,7 @@
 const url = 'https://api.thecatapi.com/v1/images/search';
 const apiKey = 'b416d36e-f452-4b8c-861a-093055d6727e';
 
-const getCatImage = () => {
+function getCatImage () {
     return new Promise((resolve) => {
         //create http object to query my url
         const http = new XMLHttpRequest();
@@ -21,8 +21,23 @@ const getCatImage = () => {
         http.send();
     }) 
 
-};
+}
 
-// getCatImage().then(res => {
-//     console.log(res);
-// });
+function setCatImage(imgUrl) {
+    document.querySelector('#cat-img').setAttribute('src', imgUrl);
+}
+
+function displayCatImage() {
+    getCatImage().then(res => {
+        setCatImage(res.url);
+    });
+}
+
+// Retrieve initial image
+displayCatImage();
+
+// Add action listener to button
+document.querySelector('#cat-btn').addEventListener('click', () => {
+    displayCatImage();
+});
+
