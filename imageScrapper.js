@@ -33,14 +33,22 @@ function displayCatImage() {
     });
 }
 
+let audio;
+
 // Retrieve initial image
 displayCatImage();
 
 // Add action listener to button
 document.querySelector('#cat-btn').addEventListener('click', () => {
-    setCatImage("main.gif");
+    setCatImage('main.gif');
+
+    if (!audio) {
+        audio = new Audio('meow.mp3');
+        audio.play();
+    }
+
     setTimeout(() => {
         displayCatImage();
-    }, 1000)
+    }, 500)
 });
 
